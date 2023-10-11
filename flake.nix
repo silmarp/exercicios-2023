@@ -1,11 +1,41 @@
 {
-  description = "A very basic flake";
+  description = "A flake for managing exercicios-2023 project";
 
-  outputs = { self, nixpkgs }: {
-
-    packages.x86_64-linux.hello = nixpkgs.legacyPackages.x86_64-linux.hello;
-
-    packages.x86_64-linux.default = self.packages.x86_64-linux.hello;
-
+  inputs = {
+    nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
+    utils.url = "github:numtide/flake-utils";
   };
+
+  outputs = { self, nixpkgs, utils }: 
+    utils.lib.eachDefaultSystem (system:
+      let
+        pkgs = import nixpkgs { inherit system; };
+        nodejs = pkgs.nodejs_20;
+        nodePackages = import ./ts/default.nix { inherit pkgs system nodejs; };
+      in
+      {
+        packages = {
+        };
+
+        devShells = rec { 
+          default = ts;
+          ts = nodePackages.shell.override {
+            buildInputs = [
+              pkgs.nodePackages."@angular/cli"
+              pkgs.cypress
+              pkgs.nodePackages.vscode-langservers-extracted
+            ];
+            configurePhase = ''
+              export CYPRESS_INSTALL_BINARY=0
+              export CYPRESS_RUN_BINARY=${pkgs.cypress}/bin/Cypress
+            '';
+            shellHook = ''
+              export CYPRESS_INSTALL_BINARY=0
+              export CYPRESS_RUN_BINARY=${pkgs.cypress}/bin/Cypress
+            '';
+
+          };
+        };
+      }
+    );
 }
