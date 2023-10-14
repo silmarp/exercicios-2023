@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./side-bar.component.scss']
 })
 export class SideBarComponent implements OnInit {
+  // TODO turn event-name into prop
+  // TODO use list as site routing
 
   constructor() { }
 
