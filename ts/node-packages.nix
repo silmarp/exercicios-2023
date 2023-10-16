@@ -22,6 +22,15 @@ let
         sha512 = "QoBcIKy1ZiU+4qJsAh5Ls20BupWiXiZzKb0s6L9/dntPt5Msr4Ao289XR2P6O1L+kTsCprH9Kt41zyGQ/bkRqg==";
       };
     };
+    "@angular/cdk-13.3.9" = {
+      name = "_at_angular_slash_cdk";
+      packageName = "@angular/cdk";
+      version = "13.3.9";
+      src = fetchurl {
+        url = "https://registry.npmjs.org/@angular/cdk/-/cdk-13.3.9.tgz";
+        sha512 = "XCuCbeuxWFyo3EYrgEYx7eHzwl76vaWcxtWXl00ka8d+WAOtMQ6Tf1D98ybYT5uwF9889fFpXAPw98mVnlo3MA==";
+      };
+    };
     "@angular/common-14.3.0" = {
       name = "_at_angular_slash_common";
       packageName = "@angular/common";
@@ -74,6 +83,15 @@ let
       src = fetchurl {
         url = "https://registry.npmjs.org/@angular/localize/-/localize-14.3.0.tgz";
         sha512 = "YmwlOEGnFonfDrIcWqlxXVFFjd0Q6yXeHGZCBFBfwbtjIseiJJ4UBmkTUgFeq7qlWevSFQzHdQnraFRGZpnMig==";
+      };
+    };
+    "@angular/material-13.3.9" = {
+      name = "_at_angular_slash_material";
+      packageName = "@angular/material";
+      version = "13.3.9";
+      src = fetchurl {
+        url = "https://registry.npmjs.org/@angular/material/-/material-13.3.9.tgz";
+        sha512 = "FU8lcMgo+AL8ckd27B4V097ZPoIZNRHiCe3wpgkImT1qC0YwcyXZVn0MqQTTFSdC9a/aI8wPm3AbTClJEVw5Vw==";
       };
     };
     "@angular/platform-browser-14.3.0" = {
@@ -760,13 +778,13 @@ let
         sha512 = "7O+FbCihrB5WGbFYesctwmTKae6rOiIzmz1icreWJ+0aA7LJfuqhEso2T9ncpcFtzMQtzXf2QGGueWJGTYsqrA==";
       };
     };
-    "caniuse-lite-1.0.30001547" = {
+    "caniuse-lite-1.0.30001549" = {
       name = "caniuse-lite";
       packageName = "caniuse-lite";
-      version = "1.0.30001547";
+      version = "1.0.30001549";
       src = fetchurl {
-        url = "https://registry.npmjs.org/caniuse-lite/-/caniuse-lite-1.0.30001547.tgz";
-        sha512 = "W7CrtIModMAxobGhz8iXmDfuJiiKg1WADMO/9x7/CLNin5cpSbuBjooyoIUVB5eyCc36QuTVlkVa1iB2S5+/eA==";
+        url = "https://registry.npmjs.org/caniuse-lite/-/caniuse-lite-1.0.30001549.tgz";
+        sha512 = "qRp48dPYSCYaP+KurZLhDYdVE+yEyht/3NlmcJgVQ2VMGt6JL36ndQ/7rgspdZsJuxDPFIo/OzBT2+GmIJ53BA==";
       };
     };
     "caseless-0.12.0" = {
@@ -1066,13 +1084,13 @@ let
         sha512 = "eh9O+hwRHNbG4BLTjEl3nw044CkGm5X6LoaCf7LPp7UU8Qrt47JYNi6nPX8xjW97TKGKm1ouctg0QSpZe9qrnw==";
       };
     };
-    "electron-to-chromium-1.4.553" = {
+    "electron-to-chromium-1.4.556" = {
       name = "electron-to-chromium";
       packageName = "electron-to-chromium";
-      version = "1.4.553";
+      version = "1.4.556";
       src = fetchurl {
-        url = "https://registry.npmjs.org/electron-to-chromium/-/electron-to-chromium-1.4.553.tgz";
-        sha512 = "HiRdtyKS2+VhiXvjhMvvxiMC33FJJqTA5EB2YHgFZW6v7HkK4Q9Ahv2V7O2ZPgAjw+MyCJVMQvigj13H8t+wvA==";
+        url = "https://registry.npmjs.org/electron-to-chromium/-/electron-to-chromium-1.4.556.tgz";
+        sha512 = "6RPN0hHfzDU8D56E72YkDvnLw5Cj2NMXZGg3UkgyoHxjVhG99KZpsKgBWMmTy0Ei89xwan+rbRsVB9yzATmYzQ==";
       };
     };
     "emoji-regex-8.0.0" = {
@@ -1921,13 +1939,13 @@ let
         sha512 = "S48WzZW777zhNIrn7gxOlISNAqi9ZC/uQFnRdbeIHhZhCA6UqpkOT8T1G7BvfdgP4Er8gF4sUbaS0i7QvIfCWw==";
       };
     };
-    "object-inspect-1.12.3" = {
+    "object-inspect-1.13.0" = {
       name = "object-inspect";
       packageName = "object-inspect";
-      version = "1.12.3";
+      version = "1.13.0";
       src = fetchurl {
-        url = "https://registry.npmjs.org/object-inspect/-/object-inspect-1.12.3.tgz";
-        sha512 = "geUvdk7c+eizMNUDkRpW1wJwgfOiOeHbxBR/hLXK1aT6zmVSO0jsQcs7fj6MGw89jC/cjGfLcNOrtMYtGqm81g==";
+        url = "https://registry.npmjs.org/object-inspect/-/object-inspect-1.13.0.tgz";
+        sha512 = "HQ4J+ic8hKrgIt3mqk6cVOVrW2ozL4KdvHlqpBv9vDYWx9ysAgENAdvy4FoGF+KFdhR7nQTNm5J0ctAeOwn+3g==";
       };
     };
     "once-1.4.0" = {
@@ -1964,6 +1982,15 @@ let
       src = fetchurl {
         url = "https://registry.npmjs.org/p-map/-/p-map-4.0.0.tgz";
         sha512 = "/bjOqmgETBYB5BoEeGVea8dmvHb2m9GLy1E9W43yeyfP6QQCZGFNa+XRceJEuDB6zqr+gKpIAmlLebMpykw/MQ==";
+      };
+    };
+    "parse5-5.1.1" = {
+      name = "parse5";
+      packageName = "parse5";
+      version = "5.1.1";
+      src = fetchurl {
+        url = "https://registry.npmjs.org/parse5/-/parse5-5.1.1.tgz";
+        sha512 = "ugq4DFI0Ptb+WWjAdOK16+u/nHfiIrcE+sh8kZMaM0WllQKLI9rOUq6c2b7cwPkXdzfQESqvoqK6ug7U/Yyzug==";
       };
     };
     "path-is-absolute-1.0.1" = {
@@ -2722,6 +2749,7 @@ let
     dependencies = [
       sources."@ampproject/remapping-2.2.1"
       sources."@angular/animations-14.3.0"
+      sources."@angular/cdk-13.3.9"
       sources."@angular/common-14.3.0"
       sources."@angular/compiler-14.3.0"
       (sources."@angular/compiler-cli-14.3.0" // {
@@ -2734,6 +2762,7 @@ let
       sources."@angular/core-14.3.0"
       sources."@angular/forms-14.3.0"
       sources."@angular/localize-14.3.0"
+      sources."@angular/material-13.3.9"
       sources."@angular/platform-browser-14.3.0"
       sources."@angular/platform-browser-dynamic-14.3.0"
       sources."@angular/router-14.3.0"
@@ -2816,7 +2845,7 @@ let
       sources."buffer-crc32-0.2.13"
       sources."cachedir-2.4.0"
       sources."call-bind-1.0.2"
-      sources."caniuse-lite-1.0.30001547"
+      sources."caniuse-lite-1.0.30001549"
       sources."caseless-0.12.0"
       sources."chalk-2.4.2"
       sources."check-more-types-2.24.0"
@@ -2862,7 +2891,7 @@ let
       sources."dependency-graph-0.11.0"
       sources."duplexer-0.1.2"
       sources."ecc-jsbn-0.1.2"
-      sources."electron-to-chromium-1.4.553"
+      sources."electron-to-chromium-1.4.556"
       sources."emoji-regex-8.0.0"
       sources."end-of-stream-1.4.4"
       sources."enquirer-2.4.1"
@@ -2974,11 +3003,12 @@ let
       sources."node-releases-2.0.13"
       sources."normalize-path-3.0.0"
       sources."npm-run-path-4.0.1"
-      sources."object-inspect-1.12.3"
+      sources."object-inspect-1.13.0"
       sources."once-1.4.0"
       sources."onetime-5.1.2"
       sources."ospath-1.2.2"
       sources."p-map-4.0.0"
+      sources."parse5-5.1.1"
       sources."path-is-absolute-1.0.1"
       sources."path-key-3.1.1"
       sources."pause-stream-0.0.11"
