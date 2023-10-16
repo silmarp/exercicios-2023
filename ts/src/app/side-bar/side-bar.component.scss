@@ -1,14 +1,12 @@
 
 .side-bar {
-  width: 25%;
-  max-width: 220px;
-  min-width: 175px;
+  width: 100%;
 }
 
 .event-name {
+  height: 68px;
   background: linear-gradient(180deg, #FFB354 0%, #EE7A3A 100%);
   width: 100%;
-  padding: 17px 0;
   font-family: Roboto;
   font-size: 30px;
   font-weight: 500;
