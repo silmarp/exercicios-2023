@@ -7,6 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContentComponent implements OnInit {
 
+  isReadMore = true;
+
+  showText() {
+    this.isReadMore = !this.isReadMore;
+  }
+
   constructor() { }
 
   ngOnInit(): void {
