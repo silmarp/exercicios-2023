@@ -6,6 +6,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./discussion.component.scss']
 })
 export class DiscussionComponent implements OnInit {
+  activeCard: string = 'create';
+
+  createTopic() {
+    this.activeCard = 'send';
+  };
+
+  sendTopic() {
+    this.activeCard = 'sent';
+  };
 
   constructor() { }
 

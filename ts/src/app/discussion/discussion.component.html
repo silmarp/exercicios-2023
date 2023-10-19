@@ -1,4 +1,4 @@
-<mat-card class="discussion-card">
+<mat-card class="discussion-create" *ngIf="activeCard =='create'">
   <mat-card-title>Discussões</mat-card-title>
   <mat-card-content>
     <h3>Compartilhe suas ideias ou dúvidas com os autores!</h3>
@@ -10,10 +10,52 @@
     <p>Sabia que o maior estímulo no desenvolvimento científico e cultural é a curiosidade? Deixe seus questionamentos ou sugestões para o autor!</p>
   </mat-card-content>
   <mat-card-actions>
-    <button mat-button>
+    <button mat-button class="btn-create-topic" (click)="createTopic()">
       <mat-icon aria-hidden="false" aria-label="add topic button">add</mat-icon>
       Criar topíco
     </button>
   </mat-card-actions>
 </mat-card>
+
+<mat-card class="discussion-send" *ngIf="activeCard =='send'">
+  <mat-card-title>Discussões</mat-card-title>
+  <mat-card-content>
+    <p>Tem uma dúvida ou sugestão? Compartilhe seu feedback com os autores!</p>
+    <p>
+      <mat-form-field appearance="outline">
+        <h3>Assunto</h3>
+        <mat-label>outline form field</mat-label>
+        <input matInput placeholder="Defina um topico sucinto para notificar o autores">
+      </mat-form-field>
+    </p>
+    <p>
+      <mat-form-field appearance="outline">
+        <h3>Conteúdo</h3>
+        <mat-label></mat-label>
+        <input matInput>
+      </mat-form-field>
+    </p>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-button class="btn-send-topic" (click)="sendTopic()">
+      Enviar
+    </button>
+  </mat-card-actions>
+</mat-card>
+
+<mat-card class="discussion-sent" *ngIf="activeCard =='sent'">
+  <mat-card-title>Discussões</mat-card-title>
+  <mat-card-content>
+    <h3>Seu tópico foi enviado com sucesso! :D</h3>
+    <a href="#">Descubra outros trabalhos!</a>
+    <div>
+    </div>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-button class="btn-create-topic" (click)="createTopic()">
+      Criar novo tópico
+    </button>
+  </mat-card-actions>
+</mat-card>
+
 <app-topic></app-topic>
