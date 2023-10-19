@@ -1,1 +1,20 @@
-<p>topic works!</p>
+<mat-card class="topic-card" [ngClass]="{'answered-topic': topic.answers > 0}">
+  <mat-card-title  [ngClass]="{'blurred': !topic.approved }">{{topic.subject}}</mat-card-title>
+  <mat-card-subtitle  [ngClass]="{'blurred': !topic.approved }">{{topic.author}}</mat-card-subtitle>
+  <mat-card-content>
+    <p [ngClass]="{'blurred': !topic.approved }">{{topic.comment}}</p>
+
+    <div  *ngIf="!topic.approved">
+      <mat-icon aria-hidden="false" aria-label="Example home icon">done_all</mat-icon>
+      <p>Aguardando feedback dos autores</p>
+      <a href="#">editar tópico</a>
+    </div>
+
+  </mat-card-content>
+  <mat-card-footer  [ngClass]="{'blurred': !topic.approved }">
+      <mat-icon aria-hidden="false" aria-label="Example home icon">more_vert</mat-icon>
+      <mat-icon aria-hidden="false" aria-label="Example home icon">favorite</mat-icon>
+      {{topic.likes}} Likes | {{topic.answers}} Respostas
+  </mat-card-footer>
+</mat-card>
+
