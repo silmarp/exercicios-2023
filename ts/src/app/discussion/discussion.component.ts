@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Topic } from '../topic';
 
 @Component({
   selector: 'app-discussion',
@@ -8,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 export class DiscussionComponent implements OnInit {
   activeCard: string = 'create';
 
-  exampleTopic = {
+  exampleTopic: Topic = {
     subject: "Assunto da pergunta aparece aqui",
     author: "Carlos Henrique Santos",
     comment: "Comecinho da pergunta aparece aqui resente relato inscreve-se no campo da análise da dimensão e impacto de processo formativo situado impacto de processo formativo processo...",
@@ -17,12 +18,18 @@ export class DiscussionComponent implements OnInit {
     answers: 1,
   };
 
+  topics: Array<Topic> = [
+    this.exampleTopic,
+    this.exampleTopic,
+  ];
+
   createTopic() {
     this.activeCard = 'send';
   };
 
   sendTopic() {
     this.activeCard = 'sent';
+    this.topics.push(this.exampleTopic);
   };
 
   constructor() { }

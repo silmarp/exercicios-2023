@@ -58,5 +58,18 @@
   </mat-card-actions>
 </mat-card>
 
-<app-topic [topic]="exampleTopic"></app-topic>
-<app-topic [topic]="exampleTopic"></app-topic>
+<div *ngFor="let topic of topics">
+  <app-topic [topic]="topic"></app-topic>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
