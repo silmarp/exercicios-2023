@@ -19,7 +19,7 @@ class Scrapper {
     $paperCards = (new DOMXPath($dom))->query("//a[contains(@class, 'paper-card')]"); 
 
     foreach ($paperCards as $paperCard) {
-        print_r($paperCard);
+        $this->extractPaper($paperCard);
     }
 
     return [
@@ -33,5 +33,27 @@ class Scrapper {
         ]
       ),
     ];
+  }
+
+  function extractPaper(\DOMElement $paperCard): Paper {
+
+        // Get authors
+        $authorElements = $paperCard->getElementsByTagName('span');
+        $authors = [];
+        foreach ($authorElements as $author){
+            $name = $author->nodeValue;
+            $institution = $author->getAttribute('title');
+            array_push(
+                $authors, 
+                new Person($name, $institution)
+            );
+        }
+
+        return new Paper(
+            123,
+            'The Nobel Prize in Physiology or Medicine 2023',
+            'Nobel Prize',
+            $authors
+          );
   }
 }
