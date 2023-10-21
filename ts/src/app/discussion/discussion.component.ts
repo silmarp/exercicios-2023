@@ -35,14 +35,14 @@ export class DiscussionComponent implements OnInit {
 
   sendTopic() {
     let newTopic: Topic = {
-    subject: "abublebe",
-    author: "RU",
-    comment: "lorem ipsum",
-    approved: false,
+    subject: this.formTopic.value.subject as string,
+    author: "Example Author",
+    comment: this.formTopic.value.content as string,
+    approved: true,
     likes: 0,
     answers: 0,
   };
-    console.warn(this.formTopic.value);
+    this.formTopic.reset();
 
     this.activeCard = 'sent';
     this.topics.push(newTopic);
