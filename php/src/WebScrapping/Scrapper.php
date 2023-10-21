@@ -36,24 +36,26 @@ class Scrapper {
   }
 
   function extractPaper(\DOMElement $paperCard): Paper {
+    // Get title
+    $title = $paperCard->getElementsByTagName('h4')[0]->nodeValue;
 
-        // Get authors
-        $authorElements = $paperCard->getElementsByTagName('span');
-        $authors = [];
-        foreach ($authorElements as $author){
-            $name = $author->nodeValue;
-            $institution = $author->getAttribute('title');
-            array_push(
-                $authors, 
-                new Person($name, $institution)
-            );
-        }
+    // Get authors
+    $authorElements = $paperCard->getElementsByTagName('span');
+    $authors = [];
+    foreach ($authorElements as $author){
+        $name = $author->nodeValue;
+        $institution = $author->getAttribute('title');
+        array_push(
+            $authors, 
+            new Person($name, $institution)
+        );
+    }
 
-        return new Paper(
-            123,
-            'The Nobel Prize in Physiology or Medicine 2023',
-            'Nobel Prize',
-            $authors
-          );
+    return new Paper(
+        123,
+        $title,
+        'Nobel Prize',
+        $authors
+      );
   }
 }
