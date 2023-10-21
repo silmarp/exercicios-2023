@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Topic } from '../topic';
+import { FormGroup, FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-discussion',
@@ -23,13 +24,28 @@ export class DiscussionComponent implements OnInit {
     this.exampleTopic,
   ];
 
+  formTopic = new FormGroup ({
+    subject: new FormControl(''),
+    content: new FormControl(''),
+  });
+
   createTopic() {
     this.activeCard = 'send';
   };
 
   sendTopic() {
+    let newTopic: Topic = {
+    subject: "abublebe",
+    author: "RU",
+    comment: "lorem ipsum",
+    approved: false,
+    likes: 0,
+    answers: 0,
+  };
+    console.warn(this.formTopic.value);
+
     this.activeCard = 'sent';
-    this.topics.push(this.exampleTopic);
+    this.topics.push(newTopic);
   };
 
   constructor() { }

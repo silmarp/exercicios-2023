@@ -18,29 +18,38 @@
 </mat-card>
 
 <mat-card class="discussion-send" *ngIf="activeCard =='send'">
+
+  <form [formGroup]="formTopic" (ngSubmit)="sendTopic()">
   <mat-card-title>Discussões</mat-card-title>
   <mat-card-content>
     <p>Tem uma dúvida ou sugestão? Compartilhe seu feedback com os autores!</p>
     <p>
       <mat-form-field appearance="outline">
-        <h3>Assunto</h3>
-        <mat-label>outline form field</mat-label>
-        <input matInput placeholder="Defina um topico sucinto para notificar o autores">
+        <mat-label for="assunto">Assunto</mat-label>
+        <input
+        id="subject"
+        type="text"
+        formControlName="subject"
+        matInput
+        placeholder="Defina um topico sucinto para notificar o autores">
       </mat-form-field>
     </p>
     <p>
       <mat-form-field appearance="outline">
-        <h3>Conteúdo</h3>
-        <mat-label></mat-label>
-        <input matInput>
+        <mat-label for="content">Conteúdo</mat-label>
+        <input
+          id="content" type="text" formControlName="content"
+        matInput>
       </mat-form-field>
     </p>
   </mat-card-content>
   <mat-card-actions>
-    <button mat-button class="btn-send-topic" (click)="sendTopic()">
+    <button mat-button class="btn-send-topic" type="submit">
       Enviar
     </button>
   </mat-card-actions>
+
+  </form>
 </mat-card>
 
 <mat-card class="discussion-sent" *ngIf="activeCard =='sent'">
