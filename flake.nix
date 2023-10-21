@@ -37,7 +37,11 @@
 
           };
           phpex = pkgs.mkShell {
-            buildInputs = with pkgs; [ php81 ] ++ (with pkgs.php81Packages; [composer]);
+            buildInputs = with pkgs; [ 
+              php81
+              phpactor
+              pkgs.nodePackages.vscode-langservers-extracted
+            ] ++ (with pkgs.php81Packages; [composer]);
             shellHook = ''
               cd php
             '';
