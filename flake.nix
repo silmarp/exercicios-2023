@@ -32,8 +32,15 @@
             shellHook = ''
               export CYPRESS_INSTALL_BINARY=0
               export CYPRESS_RUN_BINARY=${pkgs.cypress}/bin/Cypress
+              cs ts
             '';
 
+          };
+          phpex = pkgs.mkShell {
+            buildInputs = with pkgs; [ php81 ] ++ (with pkgs.php81Packages; [composer]);
+            shellHook = ''
+              cd php
+            '';
           };
         };
       }
