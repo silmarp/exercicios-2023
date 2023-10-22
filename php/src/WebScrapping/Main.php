@@ -22,18 +22,13 @@ class Main {
     // Write your logic to save the output file bellow.
     $writer = OpenSpoutWriterEntityFactory::createXLSXWriter();
     $writer->openToFile('./output.xlsx');
-
-    /*
-    $cells = [
-        OpenSpoutWriterEntityFactory::createCell('Carl'),
-        OpenSpoutWriterEntityFactory::createCell('is not'),
-        OpenSpoutWriterEntityFactory::createCell('great!'),
+    $rows = [];
+    $firstCells = [
+        OpenSpoutWriterEntityFactory::createCell('id'),
+        OpenSpoutWriterEntityFactory::createCell('title'),
+        OpenSpoutWriterEntityFactory::createCell('type'),
     ];
-
-    $singleRow = OpenSpoutWriterEntityFactory::createRow($cells);
-    $writer->addRow($singleRow);   
-
-    */
+    $authorColumns = 0;
 
     foreach($data as $paper) {
         $cells = [
@@ -44,14 +39,26 @@ class Main {
         foreach($paper->authors as $key=>$author){
             array_push($cells, OpenSpoutWriterEntityFactory::createCell($author->name));
             array_push($cells, OpenSpoutWriterEntityFactory::createCell($author->institution));
+
+            if($key+1 > $authorColumns){
+                $index = $key+1;
+                $aut = OpenSpoutWriterEntityFactory::createCell("Author $index");
+                array_push($firstCells, $aut);
+                $inst = OpenSpoutWriterEntityFactory::createCell("Author $index institution");
+                array_push($firstCells, $inst);
+                $authorColumns = $authorColumns+1;
+            }
         }
         
-        $singleRow = OpenSpoutWriterEntityFactory::createRow($cells);
-        $writer->addRow($singleRow);   
+        $row = OpenSpoutWriterEntityFactory::createRow($cells);
+        array_push($rows, $row);
     }
 
+    $firstRow = OpenSpoutWriterEntityFactory::createRow($firstCells);
+    array_unshift($rows, $firstRow);
+
+    $writer->addRows($rows); 
     $writer->close();
-    print_r($data);
   }
 
 }
