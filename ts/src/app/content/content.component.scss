@@ -10,13 +10,44 @@
   color: #ED7839;
 }
 
+.mat-card-title{
+  font-family: Roboto;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 25px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #4E4E4E;
+  background: #FDF1EB;
+}
+
+.mat-card {
+  font-family: Quicksand;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 21px;
+  letter-spacing: 0.02em;
+
+  &.summary-card {
+    text-align: center;
+  }
+  &.details {
+    text-align: left;
+  }
+}
+
 .btn-article {
+  text-align: center;
   padding: 6px, 12px, 6px, 12px;
   border-radius: 4px;
   gap: 5px;
     background: linear-gradient(0deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)),
   linear-gradient(0deg, #ED7839, #ED7839);
     color: #FFFFFF;
+}
+.buttons-container {
+  text-align: right;
+  padding: 6px, 12px, 6px, 12px;
 }
 
 .video-overlay {
