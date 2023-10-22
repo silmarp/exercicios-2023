@@ -2,18 +2,18 @@
   <mat-card-title class="ops-topic-subject"  [ngClass]="{'blurred': !topic.approved }">{{topic.subject}}</mat-card-title>
   <mat-card-subtitle  class="author" [ngClass]="{'blurred': !topic.approved }">{{topic.author}}</mat-card-subtitle>
   <mat-card-content>
-    <p [ngClass]="{'blurred': !topic.approved }">{{topic.comment}}</p>
+    <p class="comments-container" [ngClass]="{'blurred': !topic.approved }">{{topic.comment}}</p>
 
-    <div  *ngIf="!topic.approved">
-      <mat-icon aria-hidden="false" aria-label="Example home icon">done_all</mat-icon>
-      <p>Aguardando feedback dos autores</p>
-      <a href="#">editar tópico</a>
+    <div class="aprovation-container" *ngIf="!topic.approved">
+      <mat-icon class="" aria-hidden="false" aria-label="Example home icon">done_all</mat-icon>
+      <p class="" >Aguardando feedback dos autores</p>
+      <a class="edit-topic" href="#">editar tópico</a>
     </div>
 
   </mat-card-content>
-  <mat-card-footer class="comments-container"  [ngClass]="{'blurred': !topic.approved }">
-      <mat-icon mat-flat-button class="topic-button more-options" aria-hidden="false" aria-label="Example home icon">more_vert</mat-icon>
-      <mat-icon mat-flat-button class="topic-button favorite" aria-hidden="false" aria-label="Example home icon">favorite</mat-icon>
+  <mat-card-footer class="topic-footer" [ngClass]="{'blurred': !topic.approved }">
+      <mat-icon [ngClass]="{'blurred': !topic.approved }" mat-flat-button class="topic-button more-options" aria-hidden="false" aria-label="Example home icon">more_vert</mat-icon>
+      <mat-icon [ngClass]="{'blurred': !topic.approved }" mat-flat-button class="topic-button favorite" aria-hidden="false" aria-label="Example home icon">favorite</mat-icon>
       {{topic.likes}} Likes | {{topic.answers}} Respostas
   </mat-card-footer>
 </mat-card>
