@@ -36,6 +36,14 @@ class Scrapper {
   }
 
   function extractPaper(\DOMElement $paperCard): Paper {
+    // Get id and type using XPath
+    $dom = new \DOMDocument();
+    $dom->appendChild($dom->importNode($paperCard, true));
+    $xpath = new DOMXPath($dom);
+
+    $id = $xpath->query("//div[@class='volume-info']")[0]->nodeValue;
+    $type = $xpath->query("//div[@class='tags mr-sm']")[0]->nodeValue;
+
     // Get title
     $title = $paperCard->getElementsByTagName('h4')[0]->nodeValue;
 
@@ -52,9 +60,9 @@ class Scrapper {
     }
 
     return new Paper(
-        123,
+        $id,
         $title,
-        'Nobel Prize',
+        $type,
         $authors
       );
   }
