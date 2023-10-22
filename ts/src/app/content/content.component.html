@@ -1,4 +1,4 @@
-<div class="container-fluid p-3">
+<div class="content-container container-fluid p-3">
   <div class="row">
     <div class="col-10">
       <h2 class="title">Análise sensorial de preparações funcionais desenvolvidas para escolares entre 09 e 15 anos, do município de Campinas/SP </h2>
@@ -25,7 +25,7 @@
     </div>
     <div class="col-2">
       <h3 class="text-pirmary">Como citar esse trabalho ?</h3>
-      <div>
+      <div class="cards-container">
         <mat-card class="details-card">
           <mat-card-title>Detalhes</mat-card-title>
           <mat-card-content>
@@ -54,7 +54,7 @@
         </mat-card>
       </div>
     </div>
-  <div class="row">
+  <div class="cards-container">
     <mat-card class="summary-card">
       <mat-card-title>Resumo</mat-card-title>
       <mat-card-content>
@@ -69,16 +69,13 @@ Praesent velit dolor, dignissim sed quam ac, efficitur porta justo. Pellentesque
 
       </mat-card-content>
         <mat-card-actions>
-        <a mat-button class="btn-show-more" type="button" (click)="showText()">
+          <a mat-button class="btn-show-more" type="button" (click)="showText()">
           {{ isReadMore ? 'ver mais': 'ver menos' }}
-        </a>
+          </a>
+        </mat-card-actions>
+      </mat-card>
 
-      </mat-card-actions>
-    </mat-card>
-    <app-discussion></app-discussion>
+      </div>
+      <app-discussion></app-discussion>
   </div>
-  </div>
-
-
 </div>
-<mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="home"></mat-icon>
