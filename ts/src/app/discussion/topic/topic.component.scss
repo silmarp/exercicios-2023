@@ -1,4 +1,46 @@
 .blurred {
-        color: transparent;
-        text-shadow: 0 0 10px #000;
-      }
+  color: transparent;
+  text-shadow: 0 0 10px #000;
+}
+.ops-topic-subject {
+  font-family: Quicksand;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 20px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #ED7839;
+}
+
+.author {
+  color: #5C5C5C;
+  font-family: Quicksand;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 15px;
+  letter-spacing: 0em;
+  text-align: left;
+}
+
+.comments-container {
+  font-family: Segoe UI;
+  font-size: 14px;
+  font-weight: 350;
+  line-height: 19px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #757575;
+}
+
+.more-options {
+  text-align: center;
+  width: 27px;
+  background: #FFFFFF;
+  color: #ED7839;
+}
+.favorite {
+  text-align: center;
+  width: 27px;
+  background: #ED7839;
+  color: #FFFFFF;
+}

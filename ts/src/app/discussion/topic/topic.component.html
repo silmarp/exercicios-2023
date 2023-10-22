@@ -1,6 +1,6 @@
 <mat-card class="topic-card" [ngClass]="{'answered-topic': topic.answers > 0}">
   <mat-card-title class="ops-topic-subject"  [ngClass]="{'blurred': !topic.approved }">{{topic.subject}}</mat-card-title>
-  <mat-card-subtitle  [ngClass]="{'blurred': !topic.approved }">{{topic.author}}</mat-card-subtitle>
+  <mat-card-subtitle  class="author" [ngClass]="{'blurred': !topic.approved }">{{topic.author}}</mat-card-subtitle>
   <mat-card-content>
     <p [ngClass]="{'blurred': !topic.approved }">{{topic.comment}}</p>
 
@@ -11,12 +11,10 @@
     </div>
 
   </mat-card-content>
-  <mat-card-footer  [ngClass]="{'blurred': !topic.approved }">
-      <mat-icon aria-hidden="false" aria-label="Example home icon">more_vert</mat-icon>
-      <mat-icon aria-hidden="false" aria-label="Example home icon">favorite</mat-icon>
-      <div class="comments-container">
+  <mat-card-footer class="comments-container"  [ngClass]="{'blurred': !topic.approved }">
+      <mat-icon mat-flat-button class="topic-button more-options" aria-hidden="false" aria-label="Example home icon">more_vert</mat-icon>
+      <mat-icon mat-flat-button class="topic-button favorite" aria-hidden="false" aria-label="Example home icon">favorite</mat-icon>
       {{topic.likes}} Likes | {{topic.answers}} Respostas
-      </div>
   </mat-card-footer>
 </mat-card>
 
