@@ -18,21 +18,15 @@ class Scrapper {
     // Filter a elements with paper-card class with xPath
     $paperCards = (new DOMXPath($dom))->query("//a[contains(@class, 'paper-card')]"); 
 
+    $papers = [];
     foreach ($paperCards as $paperCard) {
-        $this->extractPaper($paperCard);
+        array_push(
+            $papers,
+            $this->extractPaper($paperCard)
+        );
     }
 
-    return [
-      new Paper(
-        123,
-        'The Nobel Prize in Physiology or Medicine 2023',
-        'Nobel Prize',
-        [
-          new Person('Katalin Karikó', 'Szeged University'),
-          new Person('Drew Weissman', 'University of Pennsylvania'),
-        ]
-      ),
-    ];
+    return $papers;
   }
 
   function extractPaper(\DOMElement $paperCard): Paper {
@@ -52,7 +46,11 @@ class Scrapper {
     $authors = [];
     foreach ($authorElements as $author){
         $name = $author->nodeValue;
+        $name = str_replace(';', '', $name);
+
         $institution = $author->getAttribute('title');
+        $institution = str_replace('/', '', $institution);
+
         array_push(
             $authors, 
             new Person($name, $institution)
