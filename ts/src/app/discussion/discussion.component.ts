@@ -21,7 +21,6 @@ export class DiscussionComponent implements OnInit {
 
   topics: Array<Topic> = [
     this.exampleTopic,
-    this.exampleTopic,
   ];
 
   formTopic = new FormGroup ({
@@ -35,13 +34,13 @@ export class DiscussionComponent implements OnInit {
 
   sendTopic() {
     let newTopic: Topic = {
-    subject: this.formTopic.value.subject as string,
-    author: "Example Author",
-    comment: this.formTopic.value.content as string,
-    approved: true,
-    likes: 0,
-    answers: 0,
-  };
+      subject: this.formTopic.value.subject as string,
+      author: "Example Author",
+      comment: this.formTopic.value.content as string,
+      approved: false,
+      likes: 0,
+      answers: 0,
+    };
     this.formTopic.reset();
 
     this.activeCard = 'sent';
